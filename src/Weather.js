@@ -5,11 +5,11 @@ import "./Weather.css";
 import { useState } from "react";
 
 export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({ready:false});
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handelResponse(response) {
     setWeatherData({
       ready: true,
-      date:new Date(response.data.dt*1000),
+      date: new Date(response.data.dt * 1000),
       temprature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
@@ -17,11 +17,9 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
     });
-    console.log(response.data.main);
   }
 
-  
-  if (weatherData.ready){
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <form>
@@ -47,7 +45,7 @@ export default function Weather(props) {
         <h1>{weatherData.city}</h1>
         <ul>
           <li>
-            <Formatteddate date={weatherData.data}/>
+            <Formatteddate date={weatherData.date} />
           </li>
           <li>Mostly Cloudy</li>
         </ul>
@@ -77,12 +75,11 @@ export default function Weather(props) {
         </div>
       </div>
     );
-  }
-else {
-  const apiKey = "dc913128ccaa43cdc1ca63d7d482beef";
-  let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
+  } else {
+    
+    const apiKey = "dc913128ccaa43cdc1ca63d7d482beef";
+    let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handelResponse);
     return "Loading....";
   }
-  
 }
