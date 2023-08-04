@@ -16,6 +16,7 @@ export default function WeatherInfo(props) {
         <div className="col-6 d-flex new align-items-center">
           <img
             src={`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.info.iconurl}.png`}
+          alt=" "
           />
           <WeatherTemprature Celsious={props.info.temperature} />
         </div>

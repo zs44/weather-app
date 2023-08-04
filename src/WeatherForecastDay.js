@@ -13,6 +13,7 @@ export default function WeatherForecastDay(props) {
       <div className="WeatherForecast-day">{day()}</div>
       <img
         src={`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.data.condition.icon}.png`}
+        alt=" "
       />
       <div className="WeatherForecast-temperatures">
         <span className="WeatherForecast-temperature-max">
@@ -25,5 +26,4 @@ export default function WeatherForecastDay(props) {
       </div>
     </div>
   );
-      
 }
