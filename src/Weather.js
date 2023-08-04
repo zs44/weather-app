@@ -8,6 +8,7 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
    const [city, setCity] = useState(props.city);
   function handelResponse(response) {
+    console.log(response.data);
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -63,6 +64,7 @@ export default function Weather(props) {
   } else {
     
     search();
+    
     return "Loading....";
   }
 }

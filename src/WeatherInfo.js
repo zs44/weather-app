@@ -10,14 +10,14 @@ export default function WeatherInfo(props) {
         <li>
           <Formatteddate date={props.info.date} />
         </li>
-        <li>Mostly Cloudy</li>
+        <li>{props.info.description}</li>
       </ul>
 
       <div className="row">
         <div className="col-6">
-              <WeatherIcon code={props.info.icon} size={52} />
-              <WeatherTemprature Celsious={props.info.temprature} />
-          </div>
+          <WeatherIcon code={props.info.icon} size={52} />
+          <WeatherTemprature Celsious={props.info.temprature} />
+        </div>
         <div className="col-6">
           <ul>
             <li>Humidity: {props.info.humidity}%</li>
