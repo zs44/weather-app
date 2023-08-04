@@ -29,10 +29,10 @@
 .Weather form {
   margin-bottom: 20px;
 }
-.Weather .canvas {
+.Weather .img {
   height: 64px;
   width: 64px;
-  vertical-align: top;
+
 }
 .Weather .temp {
   margin-top: 10px;

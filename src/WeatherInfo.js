@@ -1,5 +1,4 @@
 import React from "react";
-import WeatherIcon from "./WeatherIcon";
 import WeatherTemprature from "./WeatherTemprature";
 import Formatteddate from "./Formatteddate";
 export default function WeatherInfo(props) {
@@ -14,9 +13,11 @@ export default function WeatherInfo(props) {
       </ul>
 
       <div className="row">
-        <div className="col-6 d-flex new">
-          <WeatherIcon code={props.info.icon} size={52} />
-          <WeatherTemprature Celsious={props.info.temprature} />
+        <div className="col-6 d-flex new align-items-center">
+          <img
+            src={`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.info.iconurl}.png`}
+          />
+          <WeatherTemprature Celsious={props.info.temperature} />
         </div>
         <div className="col-6 new">
           <ul>
